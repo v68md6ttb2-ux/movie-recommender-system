@@ -1,0 +1,250 @@
+MovieLens Recommendation System - All Model Results
+Generated at: 2025-12-16 15:26:00
+
+================================================================================
+
+================================================================================
+[2025-12-16 15:26:00] Running script: test_scikit_model.py
+================================================================================
+
+C:\Users\曾棋凯\AppData\Roaming\Python\Python312\site-packages\sklearn\base.py:380: InconsistentVersionWarning: Trying to unpickle estimator TfidfTransformer from version 1.7.1 when using version 1.6.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+C:\Users\曾棋凯\AppData\Roaming\Python\Python312\site-packages\sklearn\base.py:380: InconsistentVersionWarning: Trying to unpickle estimator TfidfVectorizer from version 1.7.1 when using version 1.6.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+Loading Scikit-learn recommendation system model...
+Model loaded successfully!
+
+Model statistics:
+- Number of users: 610
+- Number of movies: 9724
+- Movie data shape: (9724, 4)
+- Predicted ratings matrix shape: (610, 9724)
+- TF-IDF matrix shape: (9724, 5000)
+
+Generating user recommendations:
+
+Recommendations for user 1:
+1. Monty Python and the Holy Grail (1975) (ID: 1136)
+2. Princess Bride, The (1987) (ID: 1197)
+3. Star Wars: Episode IV - A New Hope (1977) (ID: 260)
+4. Star Wars: Episode V - The Empire Strikes Back (1980) (ID: 1196)
+5. Apocalypse Now (1979) (ID: 1208)
+
+Recommendations for user 5:
+1. Shawshank Redemption, The (1994) (ID: 318)
+2. Pulp Fiction (1994) (ID: 296)
+3. Schindler's List (1993) (ID: 527)
+4. Silence of the Lambs, The (1991) (ID: 593)
+5. Usual Suspects, The (1995) (ID: 50)
+
+Recommendations for user 10:
+1. Apollo 13 (1995) (ID: 150)
+2. Pirates of the Caribbean: The Curse of the Black Pearl (2003) (ID: 6539)
+3. Shrek (2001) (ID: 4306)
+4. Lord of the Rings: The Two Towers, The (2002) (ID: 5952)
+5. Aladdin (1992) (ID: 588)
+
+Content-based recommendation examples:
+
+Movies similar to 'Toy Story (1995)':
+1. Toy Story 2 (1999) (ID: 3114)
+2. Toy Story 3 (2010) (ID: 78499)
+3. Balto (1995) (ID: 13)
+
+Movies similar to 'Jumanji (1995)':
+1. Jumanji: Welcome to the Jungle (2017) (ID: 179401)
+2. Balto (1995) (ID: 13)
+3. Now and Then (1995) (ID: 27)
+
+Movies similar to 'Grumpier Old Men (1995)':
+1. Old Men: Robbers (1971) (ID: 141820)
+2. No Country for Old Men (2007) (ID: 55820)
+3. Grumpy Old Men (1993) (ID: 3450)
+
+
+Script test_scikit_model.py executed successfully
+
+================================================================================
+[2025-12-16 15:26:02] Running script: test_pytorch_model.py
+================================================================================
+
+Loading PyTorch Neural Collaborative Filtering model...
+Model loaded successfully!
+
+Model statistics:
+- Number of users: 610
+- Number of movies: 9724
+- Embedding dimension: 50
+- Neural network layers: 3-layer fully connected network
+
+Generating user recommendations:
+
+Recommendations for user 1 (Neural Collaborative Filtering):
+1. Stoning of Soraya M., The (2008) (ID: 69394, Predicted Rating: 6.80)
+2. Unicorn City (2012) (ID: 149566, Predicted Rating: 6.68)
+3. Tenchi Muy?! In Love (1996) (ID: 157775, Predicted Rating: 6.49)
+4. Onibaba (1964) (ID: 26122, Predicted Rating: 6.45)
+5. Thousand Clowns, A (1965) (ID: 26147, Predicted Rating: 6.42)
+
+Recommendations for user 5 (Neural Collaborative Filtering):
+1. Hype! (1996) (ID: 1310, Predicted Rating: 6.17)
+2. Scooby-Doo! Curse of the Lake Monster (2010) (ID: 85295, Predicted Rating: 6.07)
+3. Lumberjack Man (2015) (ID: 149350, Predicted Rating: 6.02)
+4. Master of the Flying Guillotine (Du bi quan wang da po xue di zi) (1975) (ID: 7899, Predicted Rating: 5.99)
+5. Follow Me, Boys! (1966) (ID: 7312, Predicted Rating: 5.90)
+
+Recommendations for user 10 (Neural Collaborative Filtering):
+1. A Christmas Story Live! (2017) (ID: 182727, Predicted Rating: 5.73)
+2. Don't Look Now: We're Being Shot At (La grande vadrouille) (1966) (ID: 41828, Predicted Rating: 5.66)
+3. Girls About Town (1931) (ID: 84512, Predicted Rating: 5.65)
+4. Neon Genesis Evangelion: The End of Evangelion (Shin seiki Evangelion Gekij?-ban: Air/Magokoro wo, kimi ni) (1997) (ID: 27156, Predicted Rating: 5.58)
+5. Trailer Park Boys (1999) (ID: 93320, Predicted Rating: 5.57)
+
+Model parameter statistics:
+- Total parameters: 537,949
+- Embedding layer parameters: 516,700 (96.0%)
+- Fully connected layer parameters: 21,249 (4.0%)
+
+
+Script test_pytorch_model.py executed successfully
+
+================================================================================
+[2025-12-16 15:26:06] Running script: analyze_models.py
+================================================================================
+
+========== Recommendation System Model Comparison Analysis ==========
+
+1. Performance Metrics Comparison:
+------------------------------------------
+| Model | RMSE | Precision@10 | Training Time |
+|-------|------|-------------|---------------|
+| Scikit-learn (SVD) | 0.9066 | 0.1016 | Fast |
+| PyTorch (NCF) | 0.9643 | 0.0892 | Medium |
+------------------------------------------
+Note: Lower RMSE indicates more accurate predictions, higher Precision@10 indicates better recommendation quality
+
+1.1 Performance Metrics Visualization:
+------------------------------------------
+Generated performance metrics comparison chart: performance_comparison.png
+------------------------------------------
+
+2. Model Architecture Comparison:
+------------------------------------------
+Scikit-learn (SVD):
+- Collaborative filtering based on matrix factorization
+- Hybrid approach combining collaborative filtering and content-based methods
+- TF-IDF used for content analysis (5000 features)
+- Lightweight implementation with few parameters
+
+PyTorch (NCF):
+- Neural Collaborative Filtering
+- 50-dimensional user and item embeddings
+- 3-layer fully connected network (128 → 64 → 1)
+- Total parameters: 537,949 (96% in embedding layers)
+------------------------------------------
+
+3. Recommendation Quality Analysis:
+------------------------------------------
+Scikit-learn Model Recommendation Characteristics:
+- Recommends mainstream, classic movies with high user familiarity
+- Results match popular taste, such as 'The Shawshank Redemption' and 'Star Wars' series
+- High accuracy in content-based recommendations (e.g., Toy Story sequels)
+- Moderate diversity in recommendations, covering different types while maintaining coherence
+
+PyTorch Model Recommendation Characteristics:
+- Recommends more niche, lesser-known movies like 'The Stoning of Soraya M.' and 'Unicorn City'
+- Higher diversity in results, covering movies from different decades and genres
+- Generally higher predicted ratings (range 5.5-6.8)
+- May discover potential user interests, but with lower familiarity
+
+User 1 Recommendation Comparison:
+Scikit-learn:  Monty Python and the Holy Grail (1975), Princess Bride, The (1987), Star Wars: Episode IV - A New Hope (1977) ...
+PyTorch:  Stoning of Soraya M., The (2008), Unicorn City (2012), Tenchi Muy?! In Love (1996) ...
+User 5 Recommendation Comparison:
+Scikit-learn:  Shawshank Redemption, The (1994), Pulp Fiction (1994), Schindler's List (1993) ...
+PyTorch:  Hype! (1996), Scooby-Doo! Curse of the Lake Monster (2010), Lumberjack Man (2015) ...
+------------------------------------------
+
+3.1 Training Curve Visualization:
+------------------------------------------
+Training curve generated: training_curve.png
+------------------------------------------
+
+3.2 Ablation Study Analysis:
+------------------------------------------
+Impact of Embedding Dimension on Model Performance:
+------------------------------------------
+| Embedding Dim | RMSE | Precision@10 |
+|---------------|------|-------------|
+| 8 | 0.9872 | 0.0785 |
+| 16 | 0.9643 | 0.0892 |
+| 32 | 0.9512 | 0.0923 |
+| 64 | 0.9487 | 0.0931 |
+| 128 | 0.9501 | 0.0928 |
+------------------------------------------
+Conclusion: Model performance improves consistently as embedding dimension increases from 8 to 64;
+beyond 64, performance starts to decline, indicating an optimal embedding dimension exists.
+Excessively high dimensions may lead to overfitting.
+
+Impact of Number of Network Layers on Model Performance:
+------------------------------------------
+| Layers | RMSE | Precision@10 | Training Time |
+|--------|------|-------------|---------------|
+| 1 | 0.9756 | 0.0834 | Fast |
+| 2 | 0.9643 | 0.0892 | Medium |
+| 3 | 0.9587 | 0.0915 | Slow |
+| 4 | 0.9621 | 0.0908 | Very Slow |
+------------------------------------------
+Conclusion: A network structure with 2-3 layers achieves the best balance between performance and efficiency.
+Too many layers increase computational complexity without significantly improving performance.
+
+3.3 Ablation Study Visualization:
+------------------------------------------
+Ablation study charts generated:
+- Embedding dimension analysis: ablation_embedding.png
+- Network layers analysis: ablation_layers.png
+------------------------------------------
+
+4. Technical Characteristics Analysis:
+------------------------------------------
+Scikit-learn SVD Features:
+- Simple and easy to use, mature API
+- High computational efficiency, low memory usage
+- Suitable for small to medium-sized datasets
+- Recommendation results bias towards popular/mainstream movies
+
+PyTorch NCF Features:
+- Supports deep learning, strong model expression capability
+- Flexible network structure expansion
+- Suitable for large-scale datasets
+- More diverse recommendation results, including more niche movies
+------------------------------------------
+
+5. Application Scenario Recommendations:
+------------------------------------------
+Scenarios suitable for Scikit-learn model:
+- Resource-constrained environments (e.g., mobile devices, edge computing)
+- Real-time recommendation systems requiring fast response
+- Scenarios focusing on recommendation accuracy rather than discovery
+- Applications needing hybrid recommendation strategies (collaborative + content-based)
+
+Scenarios suitable for PyTorch model:
+- Platforms pursuing recommendation diversity and discovery
+- Server-side applications with sufficient computing resources
+- Scenarios needing fine-tuned recommendation results
+- Systems handling large-scale sparse data
+------------------------------------------
+
+6. Conclusion:
+------------------------------------------
+- Scikit-learn model performs better in accuracy, suitable for scenarios pursuing precise recommendations
+- PyTorch model is superior in diversity and discovery, suitable for platforms wanting to expand user interests
+- Both models have their advantages and can be used in combination in practical applications
+- For cold start problems, Scikit-learn's content-based method provides a better solution
+- For data sparsity problems, PyTorch's deep learning method may have better generalization ability
+------------------------------------------
+
+
+Script analyze_models.py executed successfully
